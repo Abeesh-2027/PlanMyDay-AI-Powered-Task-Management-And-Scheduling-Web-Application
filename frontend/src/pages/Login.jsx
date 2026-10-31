@@ -58,7 +58,7 @@ export default function Login() {
                 className="input"
                 autoComplete="username"
                 autoCapitalize="none"
-                placeholder="Enter any username"
+                placeholder="Enter Your Name"
                 value={form.username}
                 onChange={(e) => {
                   setForm({ ...form, username: e.target.value });
@@ -77,7 +77,7 @@ export default function Login() {
                   type={showPassword ? 'text' : 'password'}
                   className="input pr-12"
                   autoComplete="current-password"
-                  placeholder="Enter any password"
+                  placeholder="Enter Your Password"
                   value={form.password}
                   onChange={(e) => {
                     setForm({ ...form, password: e.target.value });
