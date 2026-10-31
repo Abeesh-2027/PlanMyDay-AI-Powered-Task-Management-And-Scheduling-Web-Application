@@ -1,0 +1,24 @@
+# Render Blueprint: creates the FastAPI backend service.
+# In Render: New + > Blueprint > pick this repo. Secrets marked `sync: false` are asked for in the dashboard.
+services:
+  - type: web
+    name: planmyday-api
+    runtime: python
+    rootDir: backend
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.7"
+      - key: MONGODB_URL
+        sync: false            # MongoDB Atlas connection string
+      - key: DATABASE_NAME
+        value: planmyday
+      - key: OPENROUTER_API_KEY
+        sync: false            # optional: without it the priority-based fallback is used
+      - key: OPENROUTER_MODEL
+        value: openai/gpt-4o-mini
+      - key: CORS_ORIGINS
+        sync: false            # your Vercel URL(s), comma separated, e.g. https://planmyday.vercel.app

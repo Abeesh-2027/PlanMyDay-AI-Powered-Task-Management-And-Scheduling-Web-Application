@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------------------------------------------------------
+   Design tokens, the single source of truth for the theme.
+   Values are RGB triplets so Tailwind can apply opacity (bg-primary/10).
+   SOLID COLORS ONLY: the app never uses gradients.
+   --------------------------------------------------------------------------- */
+:root {
+  /* surfaces and text */
+  --bg: 248 250 252; /* #F8FAFC */
+  --card: 255 255 255; /* #FFFFFF */
+  --subtle: 241 245 249; /* #F1F5F9  chips, tracks, hover fills */
+  --line: 226 232 240; /* #E2E8F0 */
+  --ink: 30 41 59; /* #1E293B  main text */
+  --muted: 100 116 139; /* #64748B  secondary text */
+
+  /* brand */
+  --primary: 37 99 235; /* #2563EB */
+  --primary-soft: 239 246 255;
+  --primary-ink: 29 78 216;
+  --navy: 23 37 84; /* #172554 */
+  --accent: 124 58 237; /* purple: AI features and "To Do" */
+  --accent-soft: 245 243 255;
+  --accent-ink: 109 40 217;
+
+  /* status */
+  --success: 22 163 74; /* #16A34A */
+  --success-soft: 240 253 244;
+  --success-ink: 21 128 61;
+  --warning: 234 88 12; /* #EA580C */
+  --warning-soft: 255 247 237;
+  --warning-ink: 194 65 12;
+  --danger: 220 38 38; /* #DC2626 */
+  --danger-soft: 254 242 242;
+  --danger-ink: 185 28 28;
+
+  --logo-blue: #2563eb;
+  color-scheme: light;
+}
+
+.dark {
+  --bg: 11 18 32;
+  --card: 17 27 48;
+  --subtle: 24 36 62;
+  --line: 35 48 74;
+  --ink: 226 232 240;
+  --muted: 148 163 184;
+
+  --primary: 96 165 250;
+  --primary-soft: 23 37 84;
+  --primary-ink: 147 197 253;
+  --navy: 10 16 34;
+  --accent: 167 139 250;
+  --accent-soft: 46 31 94;
+  --accent-ink: 196 181 253;
+
+  --success: 74 222 128;
+  --success-soft: 20 50 36;
+  --success-ink: 134 239 172;
+  --warning: 251 146 60;
+  --warning-soft: 64 33 14;
+  --warning-ink: 253 186 116;
+  --danger: 248 113 113;
+  --danger-soft: 66 24 28;
+  --danger-ink: 252 165 165;
+
+  --logo-blue: #60a5fa;
+  color-scheme: dark;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-bg font-sans text-ink antialiased;
+    overflow-x: hidden;
+    transition: background-color 0.2s, color 0.2s;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-bold tracking-tight;
+  }
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary/60 ring-offset-2 ring-offset-bg;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-line bg-card shadow-card;
+  }
+  .card-hover {
+    @apply transition duration-200 hover:-translate-y-0.5 hover:border-primary/40;
+  }
+
+  /* Touch-friendly buttons: 44px minimum hit area. */
+  .btn {
+    @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl px-4 text-sm font-semibold transition duration-150 disabled:cursor-not-allowed disabled:opacity-60 active:scale-[0.98];
+  }
+  .btn-primary {
+    @apply btn bg-primary text-white hover:bg-primary/90;
+  }
+  .btn-accent {
+    @apply btn bg-accent text-white hover:bg-accent/90;
+  }
+  .btn-danger {
+    @apply btn bg-danger text-white hover:bg-danger/90;
+  }
+  /* In dark mode the brand colors are lighter, so text on them is navy for contrast. */
+  .dark .btn-primary,
+  .dark .btn-accent,
+  .dark .btn-danger,
+  .dark .on-primary {
+    @apply text-navy;
+  }
+  .on-primary {
+    @apply text-white;
+  }
+  .btn-secondary {
+    @apply btn border border-line bg-card text-ink hover:border-primary/40 hover:bg-subtle;
+  }
+  .btn-ghost {
+    @apply btn bg-transparent text-muted hover:bg-subtle hover:text-ink;
+  }
+  .icon-btn {
+    @apply inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-muted transition duration-150 hover:bg-subtle hover:text-ink;
+  }
+
+  .label {
+    @apply mb-1.5 block text-xs font-semibold uppercase tracking-wide text-muted;
+  }
+  /* 16px font on small screens prevents iOS zoom-on-focus. */
+  .input {
+    @apply min-h-[44px] w-full min-w-0 rounded-xl border border-line bg-card px-3.5 text-base text-ink transition placeholder:text-muted/70 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 sm:text-sm;
+  }
+  textarea.input {
+    @apply py-2.5;
+  }
+  .field-error {
+    @apply mt-1.5 text-sm font-medium text-danger-ink;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs font-semibold;
+  }
+}
