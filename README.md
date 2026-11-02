@@ -680,10 +680,10 @@ The authentication implementation is isolated so that secure authentication, suc
 ## Application Screenshots
 
 ### LoginPage
-![PlanMyDay Dashboard](Login.png)
+![PlanMyDay Dashboard](https://github.com/Abeesh-2027/PlanMyDay-AI-Powered-Task-Management-And-Scheduling-Web-Application/blob/807af0bf20ef3975bc6d447ea888b7e0b54f7274/Login.png)
 
 ### Task Management
-![PlanMyDay Tasks](Dashboard.png)
+![PlanMyDay Tasks](https://github.com/Abeesh-2027/PlanMyDay-AI-Powered-Task-Management-And-Scheduling-Web-Application/blob/807af0bf20ef3975bc6d447ea888b7e0b54f7274/Dashboard.png)
 
 ---
 
