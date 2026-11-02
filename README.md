@@ -677,6 +677,15 @@ Authentication is implemented in:
 The authentication implementation is isolated so that secure authentication, such as JWT-based authentication, can be introduced in future versions.
 
 ---
+## Application Screenshots
+
+### LoginPage
+![PlanMyDay Dashboard](Login.png)
+
+### Task Management
+![PlanMyDay Tasks](Dashboard.png)
+
+---
 
 ## 12. Future Improvements
 
