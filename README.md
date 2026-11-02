@@ -10,24 +10,6 @@ If the AI service is unavailable, the application uses a built-in priority-based
 
 ---
 
-## Table of Contents
-
-1. [Project Description](#1-project-description)
-2. [Features](#2-features)
-3. [Technology Stack](#3-technology-stack)
-4. [Project Architecture](#4-project-architecture)
-5. [Folder Structure](#5-folder-structure)
-6. [Installation and Setup](#6-installation-and-setup)
-7. [Environment Variables](#7-environment-variables)
-8. [API Endpoints](#8-api-endpoints)
-9. [Testing](#9-testing)
-10. [Deployment](#10-deployment)
-11. [Demo Authentication](#11-demo-authentication)
-12. [Future Improvements](#12-future-improvements)
-13. [License](#13-license)
-
----
-
 ## 1. Project Description
 
 PlanMyDay is designed to simplify daily planning and improve personal productivity through intelligent task management and automated scheduling.
