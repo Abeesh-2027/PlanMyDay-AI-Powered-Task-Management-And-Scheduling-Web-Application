@@ -94,7 +94,7 @@ The application uses a modern full-stack architecture with React on the frontend
 
 | Layer | Technology | Purpose |
 |---|---|---|
-| Frontend | React 18 | Building the user interface |
+| Frontend | React | Building the user interface |
 | Build Tool | Vite | Frontend development and build |
 | Styling | Tailwind CSS 3 | Responsive interface styling |
 | Routing | React Router | Client-side navigation |
